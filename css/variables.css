@@ -1,0 +1,10 @@
+:root {
+  --text-primary: #33353c;
+  --text-accent: #3c6ddd;
+  --text-link: var(--text-accent);
+  --bg-primary: #f8f9fb;
+  --text-selection: #d6e3fd;
+  --border-default: #dfe1e4;
+  --animation: 0.3s;
+  --sidebar-width: 220px;
+}

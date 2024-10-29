@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Components</title>
+    <link rel="stylesheet" href="../css/variables.css" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="css/inter.css" />
+    <link rel="icon" type="image/x-icon" href="../assets/images/me.ico" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li class="sidebar-item">
+          <a class="nav-text" href="/index.html">
+            <span class="sidebar-content">
+              <img
+                class="sidebar-icon"
+                src="../assets/images/icons/layers.svg"
+              />
+              <div>Home</div>
+            </span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="nav-text" href="../categories/components.html">
+            <span class="sidebar-content">
+              <img
+                class="sidebar-icon"
+                src="../assets/images/icons/sparkle.svg"
+              />
+              <div>Components</div>
+            </span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="nav-text" href="../categories/recipe-list.html">
+            <span class="sidebar-content">
+              <img class="sidebar-icon" src="../assets/images/icons/food.svg" />
+              <div>Recipes</div>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <div class="centred-content">
+        <img class="main-icon" src="../assets/images/icons/sparkle.svg" />
+        <h1>Components</h1>
+        <p>
+          This page is dedicated to Velocity components created using pure HTML
+          and CSS that can be used and translated into Tailwind, React / Vue
+          without the need for Figma.
+        </p>
+        <h2>Filterable</h2>
+        <p>
+          The filterable component is used to add filter criteria to a list of
+          records or items in a view. Each time a filter is added, we will
+          retrieve from the database. As they are added, they will wrap in the
+          view.
+        </p>
+        <div>
+          <div class="filter-list">
+            <div class="filterable">
+              <div class="filter-field">Job function</div>
+              <div class="filter-operator">is</div>
+              <div class="filter-data">UX Designer</div>
+              <div class="filter-remove">&#x2715;</div>
+            </div>
+            <div class="filterable">
+              <div class="filter-field">Job title</div>
+              <div class="filter-operator">contains</div>
+              <div class="filter-data"><q>UX Designer</q></div>
+              <div class="filter-remove">&#x2715;</div>
+            </div>
+            <div class="filterable">
+              <div class="filter-field">Status</div>
+              <div class="filter-operator">is</div>
+              <div class="filter-data">
+                <div class="coloured-ellipse"></div>
+                Vacant
+              </div>
+              <div class="filter-remove">&#x2715;</div>
+            </div>
+            <div class="filterable">
+              <div class="filter-field">Work type</div>
+              <div class="filter-operator">is any of</div>
+              <div class="filter-data">
+                <div class="stacked-ellipse">
+                  <div class="coloured-ellipse"></div>
+                  <div class="coloured-ellipse"></div>
+                </div>
+                Permanent or contract
+              </div>
+              <div class="filter-remove">&#x2715;</div>
+            </div>
+            <div class="filterable">
+              <div class="filter-field">Created</div>
+              <div class="filter-operator">within</div>
+              <div class="filter-data">🗓️ Last 7 days</div>
+              <div class="filter-remove">&#x2715;</div>
+            </div>
+          </div>
+        </div>
+        <h2>Pills and tags</h2>
+        <p>
+          Pills and tags are used to highlight states or categories and they can
+          take a custom colour. In some cases, pills and tags can be clickable.
+        </p>
+        <div class="pill-list">
+          <a href="" class="category-pill">Pie</a>
+          <a href="" class="category-pill">Chicken</a>
+          <a href="" class="category-pill">Slow cooker</a>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>

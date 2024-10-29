@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/variables.css" />
+    <link rel="stylesheet" href="css/inter.css" />
+    <link rel="stylesheet" href="css/inter.css" />
+    <link rel="icon" type="image/x-icon" href="assets/images/me.ico" />
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li class="sidebar-item">
+          <a class="nav-text" href="/index.html">
+            <span class="sidebar-content">
+              <img
+                class="sidebar-icon"
+                src="../assets/images/icons/layers.svg"
+              />
+              <div>Home</div>
+            </span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="nav-text" href="../categories/components.html">
+            <span class="sidebar-content">
+              <img
+                class="sidebar-icon"
+                src="../assets/images/icons/sparkle.svg"
+              />
+              <div>Components</div>
+            </span>
+          </a>
+        </li>
+        <li class="sidebar-item">
+          <a class="nav-text" href="../categories/recipe-list.html">
+            <span class="sidebar-content">
+              <img class="sidebar-icon" src="../assets/images/icons/food.svg" />
+              <div>Recipes</div>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div class="main">
+      <h1>Cookbook</h1>
+      <div>
+        <form>
+          <div class="text-input">
+            <label class="input-header" for="firstname">First name</label>
+            <input
+              id="firstname"
+              name="firstname"
+              class="textfield"
+              type="text"
+              placeholder="You can just start typing here..."
+            />
+          </div>
+        </form>
+      </div>
+      <div class="checkbox-group">
+        <div class="checkbox-container">
+          <input type="checkbox" id="cb1" />
+          <label for="cb1">Checkbox 1</label>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
