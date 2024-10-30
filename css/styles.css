@@ -5,19 +5,19 @@
 }
 
 @font-face {
-  font-family: "InterDisplay";
+  font-family: "Inter Display";
   font-weight: 400;
   src: url("assets/fonts/InterDisplay-Regular.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "InterDisplay";
+  font-family: "Inter Display";
   font-weight: 500;
   src: url("assets/fonts/InterDisplay-Medium.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "InterDisplay";
+  font-family: "Inter Display";
   font-weight: 600;
   src: url("assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
 }
@@ -83,18 +83,16 @@ nav > ul {
 }
 
 h1 {
-  font-family: "InterDisplay";
+  font-family: "Inter Display";
   font-size: 2rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.5rem;
   color: var(--text-primary);
 }
 
 h2 {
-  font-family: "InterDisplay";
+  font-family: "Inter Display";
   font-size: 1.5rem;
-  font-style: normal;
   font-weight: 600;
   line-height: 1.5rem;
   color: var(--text-primary);
