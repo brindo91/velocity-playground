@@ -622,6 +622,18 @@ svg {
   margin-bottom: 8px;
 }
 
+.avatars {
+}
+
+.avatar-image {
+  border-radius: 400px;
+  height: 56px;
+  width: 56px;
+  object-fit: cover;
+  border: 1px solid black;
+  outline: 1px solid red;
+}
+
 /* input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
