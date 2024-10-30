@@ -83,7 +83,7 @@ nav > ul {
 }
 
 h1 {
-  font-family: "Inter Display";
+  font-family: "Inter Display", "Comic Sans MS", sans-serif;
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.5rem;
@@ -91,7 +91,7 @@ h1 {
 }
 
 h2 {
-  font-family: "Inter Display";
+  font-family: "Inter Display", "Comic Sans MS", sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   line-height: 1.5rem;
