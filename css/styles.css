@@ -1,24 +1,24 @@
-@font face {
+@font-face {
   font-family: "Inter";
-  font-weight: 100 900;
+  font-weight: 100 900; /* For variable font, keep the range */
   src: url("assets/fonts/InterVariable.woff2") format("woff2");
 }
 
-@font face {
+@font-face {
   font-family: "InterDisplay";
-  font-weight: "Regular";
+  font-weight: 400;
   src: url("assets/fonts/InterDisplay-Regular.woff2") format("woff2");
 }
 
-@font face {
+@font-face {
   font-family: "InterDisplay";
-  font-weight: "Medium";
+  font-weight: 500;
   src: url("assets/fonts/InterDisplay-Medium.woff2") format("woff2");
 }
 
-@font face {
+@font-face {
   font-family: "InterDisplay";
-  font-weight: "SemiBold";
+  font-weight: 600;
   src: url("assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
 }
 
@@ -31,6 +31,7 @@
 
 html {
   background: #f8f9fb;
+  font-family: "Inter", "Comic Sans MS", sans-serif;
 }
 
 body {
