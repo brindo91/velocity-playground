@@ -1,4 +1,26 @@
-@import "tailwindcss";
+@font face {
+  font-family: "Inter";
+  font-weight: 100 900;
+  src: url("assets/fonts/InterVariable.woff2") format("woff2");
+}
+
+@font face {
+  font-family: "InterDisplay";
+  font-weight: "Regular";
+  src: url("assets/fonts/InterDisplay-Regular.woff2") format("woff2");
+}
+
+@font face {
+  font-family: "InterDisplay";
+  font-weight: "Medium";
+  src: url("assets/fonts/InterDisplay-Medium.woff2") format("woff2");
+}
+
+@font face {
+  font-family: "InterDisplay";
+  font-weight: "SemiBold";
+  src: url("assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
+}
 
 *,
 *::before,
@@ -60,7 +82,7 @@ nav > ul {
 }
 
 h1 {
-  font-family: "Inter Display";
+  font-family: "InterDisplay";
   font-size: 2rem;
   font-style: normal;
   font-weight: 600;
@@ -552,6 +574,18 @@ input:focus::placeholder {
 .filter-data {
   display: flex;
   align-items: center;
+}
+
+.icon-housing {
+  display: flex;
+  margin-right: 2px;
+}
+
+.date-icon {
+  color: #6b6f76;
+  height: 12px;
+  width: 12px;
+  margin-right: 4px;
 }
 
 .coloured-ellipse {
