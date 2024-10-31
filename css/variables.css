@@ -3,10 +3,13 @@
   --text-accent: #3c6ddd;
   --text-link: var(--text-accent);
   --bg-primary: #f8f9fb;
-  --text-selection: #d6e3fd;
+  --text-selection: #f2e5ff;
   --border-default: #dfe1e4;
   --animation: 0.3s;
   --sidebar-width: 220px;
   --avatar-size: 56px;
   --stacked-avatar-size: 40px;
+
+  --component-bg: #e5eeff;
+  --component-fg: #1e50c0;
 }
