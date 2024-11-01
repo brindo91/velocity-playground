@@ -191,7 +191,9 @@
         <p>
           Avatars include photos, logos, initials and fallbacks for when there
           is no image. Avatars come in 8 sizes and can be stacked as well. We
-          can also show a status ellipse when appropriate.
+          can also show a status ellipse when appropriate.<br />
+          If you hove over the stacked avatars, you will also see an interaction
+          and some tooltips.
         </p>
         <div class="avatar-grouping">
           <div class="avatar-list">
@@ -370,208 +372,252 @@
           This piece is to ensure that the correct responsiveness and fluidity
           is applied to the sidebar and the items inside. We need to ensure that
           text truncation is applied at the correct points as well as handling
-          the icon button in the right side on hover.
+          the icon button in the right side on hover.<br />
+          Note: The drag indicator on the left should be an icon and should be
+          able to be hovered. It is created using absolute positioning with the
+          <span class="codeblock">::before</span> pseudo class.
         </p>
-        <div class="resizable-container">
-          <ul class="tst-sidebar-list">
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <div class="dirty"></div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">Equal opportunities</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">Data protection</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">Your details</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">Contact details</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <div class="dirty"></div>
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">48 hour opt out agreement (WTD)</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name">Health and disability</span>
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-            <li>
-              <a class="tst-sidebar-item" href="#">
-                <span class="tst-sidebar-content">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    class="tst-sidebar-icon"
-                    width="12"
-                    height="12"
-                    viewBox="0 0 12 12"
-                    fill="currentColor"
-                  >
-                    <g clip-path="url(#clip0_5419_7481)">
-                      <path
-                        d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
-                      />
-                    </g>
-                    <defs>
-                      <clipPath id="clip0_5419_7481">
-                        <rect width="12" height="12" fill="currentColor" />
-                      </clipPath>
-                    </defs>
-                  </svg>
-                  <span class="item-name"
-                    >Right to work</span
-                  >
-                  <div class="item-remove">&#x22EF</div>
-                </span>
-              </a>
-            </li>
-          </ul>
+        <div class="sidebar-container">
+          <div class="resizable-container">
+            <ul class="tst-sidebar-list">
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <div class="dirty"></div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Equal opportunities</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Data protection</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Your details</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Contact details</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <div class="dirty"></div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name"
+                      >48 hour opt out agreement (WTD)</span
+                    >
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Health and disability</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a class="tst-sidebar-item" href="#">
+                  <span class="tst-sidebar-content">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="tst-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="item-name">Right to work</span>
+                    <div class="item-remove">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div class="resizable-container">
+            <ul class="tst-sidebar-list">
+              <li>
+                <a class="fld-sidebar-item" href="#">
+                  <span class="fld-sidebar-content">
+                    <div class="dirty"></div>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      class="fld-sidebar-icon"
+                      width="12"
+                      height="12"
+                      viewBox="0 0 12 12"
+                      fill="currentColor"
+                    >
+                      <g clip-path="url(#clip0_5419_7481)">
+                        <path
+                          d="M0.75 2.5C0.75 1.119 1.92495 0 3.375 0H4.95C5.5296 0 6 0.448 6 1V3C6 4.105 6.93975 5 8.1 5H10.2C10.7796 5 11.25 5.448 11.25 6V9.5C11.25 10.881 10.0751 12 8.625 12H3.375C1.92495 12 0.75 10.881 0.75 9.5V2.5ZM7.49835 0.427C7.33245 0.269 7.05 0.381 7.05 0.604V3C7.05 3.552 7.5204 4 8.1 4H10.6158C10.8499 4 10.9676 3.731 10.8017 3.573L7.49835 0.427Z"
+                        />
+                      </g>
+                      <defs>
+                        <clipPath id="clip0_5419_7481">
+                          <rect width="12" height="12" fill="currentColor" />
+                        </clipPath>
+                      </defs>
+                    </svg>
+                    <span class="fld-item-name">Equal opportunities</span>
+                    <div class="fld-item-trailing">&#x2715;</div>
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
         </div>
 
         <!-- Outside of container -->
       </div>
+
+      <!-- Button used to toggle the outlines on UI elements -->
+      <button id="debug-outlines" class="button-default">
+        Toggle Debug Outlines
+      </button>
     </div>
+    <!-- Reference to your JavaScript file -->
+    <script src="../script.js"></script>
   </body>
 </html>

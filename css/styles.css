@@ -1,25 +1,25 @@
 @font-face {
   font-family: "Inter";
   font-weight: 100 900; /* For variable font, keep the range */
-  src: url("assets/fonts/InterVariable.woff2") format("woff2");
+  src: url("../assets/fonts/InterVariable.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Inter Display";
   font-weight: 400;
-  src: url("assets/fonts/InterDisplay-Regular.woff2") format("woff2");
+  src: url("../assets/fonts/InterDisplay-Regular.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Inter Display";
   font-weight: 500;
-  src: url("assets/fonts/InterDisplay-Medium.woff2") format("woff2");
+  src: url("../assets/fonts/InterDisplay-Medium.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "Inter Display";
   font-weight: 600;
-  src: url("assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
+  src: url("../assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
 }
 
 /* #region -> Not relevant */
@@ -444,6 +444,13 @@ body {
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizelegibility;
   text-size-adjust: 100%;
+  position: relative;
+}
+
+#debug-outlines {
+  position: fixed;
+  top: 32px;
+  right: 40px;
 }
 
 ::selection {
@@ -537,12 +544,14 @@ h2 {
 button {
   box-sizing: border-box;
   height: 28px;
+  user-select: none;
 }
 
 p {
   color: var(--text-primary);
   font-size: 0.9375rem;
-  line-height: 1.5em;
+  line-height: 1.5;
+  font-weight: 425;
   overflow-wrap: break-word;
   text-wrap: pretty;
 }
@@ -560,6 +569,18 @@ h2 + p {
   width: 32px;
   margin-bottom: 8px;
   color: var(--text-accent);
+}
+
+.codeblock {
+  display: inline-flex;
+  background: var(--component-hover);
+  border: 1px solid var(--border-default);
+  padding: 2px 4px 0px 4px;
+  border-radius: 4px;
+  font-family:
+    Monaspace Neon,
+    Courier New;
+  font-weight: 500;
 }
 
 .filter-list,
@@ -688,6 +709,7 @@ buttons {
   height: var(--avatar-size);
   width: var(--avatar-size);
   position: relative;
+  user-select: none;
 }
 
 .avatar:after {
@@ -768,12 +790,6 @@ buttons {
   margin-bottom: 24px;
 }
 
-.stacked-avatar-list:after {
-  content: "hover avatars";
-  margin-left: 24px;
-  margin-top: 12px;
-}
-
 .stacked-avatar {
   border-radius: 400px;
   height: var(--stacked-avatar-size);
@@ -781,6 +797,7 @@ buttons {
   outline: calc(var(--stacked-avatar-size) * 0.1) solid white;
   transition: 0.2s;
   position: relative;
+  user-select: none;
 }
 
 .stacked-avatar:not(:first-child) {
@@ -1082,6 +1099,12 @@ buttons {
 /* #endregion */
 
 /* #region sidebar */
+/* #region sidebar main */
+.sidebar-container {
+  display: flex;
+  gap: 56px;
+}
+
 .resizable-container {
   width: 220px;
   min-width: 220px;
@@ -1107,12 +1130,21 @@ buttons {
   display: flex;
   padding: 0.375rem 0.375rem 0.375rem 0.5rem;
   border-radius: 6px;
-  outline: 0px dashed fuchsia;
+  outline: var(--debug-outlines) dashed fuchsia;
   cursor: default;
 }
 
 .tst-sidebar-item:hover {
   background: var(--component-hover);
+}
+
+.tst-sidebar-item:hover::before {
+  content: "=";
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b6f76;
+  margin-left: -19px;
+  position: absolute;
 }
 
 .tst-sidebar-item:hover .item-remove {
@@ -1131,14 +1163,16 @@ buttons {
   margin-right: 6px;
   color: #90959d;
   flex-shrink: 0;
+  outline: var(--debug-outlines) dashed orange;
 }
 
 .item-name {
-  outline: 0px dashed blue;
+  outline: var(--debug-outlines) dashed blue;
   font-family: Inter;
   font-size: 13px;
   font-weight: 500;
   line-height: 20px;
+  user-select: none;
   flex: 1;
   color: var(--text-primary);
   text-overflow: ellipsis;
@@ -1149,18 +1183,18 @@ buttons {
 .item-remove {
   flex-shrink: 0;
   display: none;
-  outline: 0px dashed orange;
+  outline: var(--debug-outlines) dashed orange;
   font-family: Inter;
-  font-size: 13px;
+  font-size: 11px;
   font-weight: 600;
   line-height: 20px;
   color: var(--text-primary);
   opacity: 0.7;
-  margin-left: 4px;
   width: 20px;
   height: 20px;
   text-align: center;
   border-radius: 4px;
+  user-select: none;
 }
 
 .item-remove:hover {
@@ -1177,5 +1211,93 @@ buttons {
   position: absolute;
   box-shadow: 0px 0px 0px 1.5px #ffffff;
 }
+/* #endregion */
+
+/* #region sidebar fields */
+.fld-sidebar-item {
+  display: flex;
+  padding: 0.375rem 0.625rem 0.375rem 0.625rem;
+  border-radius: 6px;
+  /* outline: var(--debug-outlines) dashed fuchsia; */
+  cursor: default;
+  outline: 2px solid transparent !important;
+  outline-offset: 2px !important;
+  border: 0px solid rgba(56, 66, 75, 0.1);
+  background-clip: padding-box;
+  box-shadow:
+    0px 1px 0px -1px rgba(0, 0, 0, 0.05),
+    0px 1px 1px -1px rgba(0, 0, 0, 0.05),
+    0px 1px 2px -1px rgba(0, 0, 0, 0.05),
+    0px 2px 4px -2px rgba(0, 0, 0, 0.05),
+    0px 3px 6px -3px rgba(0, 0, 0, 0.05);
+}
+
+.fld-sidebar-item:hover {
+  background: var(--component-hover);
+}
+
+.fld-sidebar-item:hover::before {
+  content: "=";
+  font-size: 13px;
+  font-weight: 500;
+  color: #6b6f76;
+  margin-left: -19px;
+  position: absolute;
+}
+
+.fld-sidebar-item:hover .item-remove {
+  display: block;
+}
+
+.fld-sidebar-content {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+  min-width: 0;
+  position: relative;
+}
+
+.fld-sidebar-icon {
+  margin-right: 6px;
+  color: #90959d;
+  flex-shrink: 0;
+  outline: var(--debug-outlines) dashed orange;
+}
+
+.fld-item-name {
+  outline: var(--debug-outlines) dashed blue;
+  font-family: Inter;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 20px;
+  user-select: none;
+  flex: 1;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.fld-item-trailing {
+  flex-shrink: 0;
+  display: none;
+  outline: var(--debug-outlines) dashed orange;
+  font-family: Inter;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 20px;
+  color: var(--text-primary);
+  opacity: 0.7;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  border-radius: 4px;
+  user-select: none;
+}
+
+.fld-item-trailing:hover {
+  opacity: 1;
+}
+/* #endregion */
 
 /* #endregion */

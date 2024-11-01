@@ -1,36 +1,44 @@
-// Set initial serving size based on the displayed value
-let currentServingSize = parseInt(
-  document.getElementById("serving-size").textContent,
-  10,
-);
+document.addEventListener("DOMContentLoaded", () => {
+  const button = document.getElementById("debug-outlines");
 
-// Function to update ingredient quantities when serving size changes
-function changeServings(delta) {
-  // Update the current serving size by the delta (+1 or -1)
-  currentServingSize += delta;
+  if (button) {
+    console.log("Button found. Setting up event listener.");
+    button.addEventListener("click", () => {
+      const root = document.documentElement;
+      const currentValue = getComputedStyle(root)
+        .getPropertyValue("--debug-outlines")
+        .trim();
 
-  // Ensure that the serving size is not less than 1
-  if (currentServingSize < 1) {
-    currentServingSize = 1;
+      console.log("Current value of --debug-outlines:", currentValue);
+
+      const newValue = currentValue === "0px" ? "1px" : "0px";
+      root.style.setProperty("--debug-outlines", newValue);
+
+      console.log("New value of --debug-outlines set to:", newValue);
+    });
+  } else {
+    console.error("Button with id 'debug-outlines' not found.");
   }
+});
 
-  // Update the displayed serving size
-  document.getElementById("serving-size").textContent = currentServingSize;
+document.addEventListener("keydown", (event) => {
+  // Check if the "O" key is pressed (without any modifier keys)
+  if (event.key === "o" || event.key === "O") {
+    // Handles both lowercase and uppercase
+    const root = document.documentElement;
+    const currentValue = getComputedStyle(root)
+      .getPropertyValue("--debug-outlines")
+      .trim();
 
-  // Get all ingredient elements
-  const ingredients = document.querySelectorAll("#ingredients-list li");
+    // Toggle between "0px" and "1px"
+    root.style.setProperty(
+      "--debug-outlines",
+      currentValue === "0px" ? "1px" : "0px",
+    );
 
-  // Loop through each ingredient and update the quantity
-  ingredients.forEach((ingredient) => {
-    // Get the base quantity stored in the data-quantity attribute
-    const baseQuantity = parseFloat(ingredient.getAttribute("data-quantity"));
-
-    // Calculate the new quantity based on the current serving size
-    const baseServingSize = 1; // Assuming original values are for 1 serving size
-    const newQuantity = (baseQuantity / baseServingSize) * currentServingSize;
-
-    // Update the displayed quantity (span with class 'measurement')
-    const measurementElement = ingredient.querySelector(".measurement");
-    measurementElement.textContent = `${newQuantity.toFixed(2)}${measurementElement.textContent.replace(/[0-9.]+/, "")}`;
-  });
-}
+    console.log(
+      "Toggled --debug-outlines to:",
+      currentValue === "0px" ? "1px" : "0px",
+    );
+  }
+});
