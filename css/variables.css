@@ -5,11 +5,14 @@
   --bg-primary: #f8f9fb;
   --text-selection: #f2e5ff;
   --border-default: #dfe1e4;
-  --animation: 0.3s;
+  --animation: 0.2s;
   --sidebar-width: 220px;
   --avatar-size: 56px;
   --stacked-avatar-size: 40px;
+  --component-hover: #eeeff1;
 
   --component-bg: #e5eeff;
   --component-fg: #1e50c0;
+
+  --section-margin: 56px;
 }
