@@ -451,6 +451,9 @@ body {
   position: fixed;
   top: 32px;
   right: 40px;
+  background: rgb(255, 255, 255, 0.5);
+  backdrop-filter: blur(6px);
+  z-index: 80;
 }
 
 ::selection {
@@ -908,7 +911,7 @@ buttons {
 
 /* #region pills & tags */
 .pills-tags {
-  margin-bottom: 40px;
+  margin-bottom: var(--section-margin);
 }
 
 .pill-list {
@@ -1218,18 +1221,14 @@ buttons {
   display: flex;
   padding: 0.375rem 0.625rem 0.375rem 0.625rem;
   border-radius: 6px;
-  /* outline: var(--debug-outlines) dashed fuchsia; */
+  outline: var(--debug-outlines) dashed fuchsia;
   cursor: default;
-  outline: 2px solid transparent !important;
-  outline-offset: 2px !important;
-  border: 0px solid rgba(56, 66, 75, 0.1);
+  background: white;
+  border: 1px solid var(--border-default);
   background-clip: padding-box;
   box-shadow:
-    0px 1px 0px -1px rgba(0, 0, 0, 0.05),
-    0px 1px 1px -1px rgba(0, 0, 0, 0.05),
-    0px 1px 2px -1px rgba(0, 0, 0, 0.05),
-    0px 2px 4px -2px rgba(0, 0, 0, 0.05),
-    0px 3px 6px -3px rgba(0, 0, 0, 0.05);
+    lch(0 0 0 / 0.02) 0px 4px 4px -1px,
+    lch(0 0 0 / 0.06) 0px 1px 1px 0px;
 }
 
 .fld-sidebar-item:hover {
@@ -1297,6 +1296,33 @@ buttons {
 
 .fld-item-trailing:hover {
   opacity: 1;
+}
+
+.kbd {
+  border: 1px solid lch(86.5 0 282.863);
+  background-color: lch(100 0 282.863);
+  box-shadow: lch(0 0 0 / 0.03) 0px 2px 0px 0px;
+  border-radius: 3px;
+  font-size: 11px;
+  font-weight: 500;
+  width: 16px;
+  height: 16px;
+  line-height: 1.5;
+  align-self: center;
+  display: inline-block;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+.kbd-shortcut {
+  margin-left: 8px;
+  margin-right: -6px;
+  display: flex;
+  gap: 4px;
+  align-content: center;
+  background: lch(98.7 0 282.863 / 0.7);
+  backdrop-filter: blur(12px);
 }
 /* #endregion */
 
