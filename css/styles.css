@@ -22,6 +22,12 @@
   src: url("../assets/fonts/InterDisplay-SemiBold.woff2") format("woff2");
 }
 
+@font-face {
+  font-family: "Monaspace";
+  font-weight: 200 800; /* For variable font, keep the range */
+  src: url("../assets/fonts/MonaspaceNeonVarVF.woff2") format("woff2");
+}
+
 /* #region -> Not relevant */
 
 .hero-image {
@@ -618,10 +624,9 @@ h2 + p {
   border: 1px solid var(--border-default);
   padding: 2px 4px 0px 4px;
   border-radius: 4px;
-  font-family:
-    Monaspace Neon,
-    Courier New;
-  font-weight: 500;
+  font-family: "Monaspace";
+  font-weight: 450;
+  letter-spacing: 0.012em;
   font-size: 12px;
 }
 
@@ -1363,6 +1368,7 @@ buttons {
   justify-content: space-between;
   padding: 12px 0px;
   border-bottom: 0.5px solid var(--border-default);
+  margin-bottom: var(--section-margin);
 }
 
 .vh-leading-content {
@@ -1415,6 +1421,168 @@ buttons {
   align-items: center;
   gap: 12px;
   flex-wrap: nowrap;
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+/* #endregion */
+
+/* #region form card */
+
+.menu-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 24px;
+  width: 828px;
+  min-width: 260px;
+  min-height: fit-content;
+  max-width: 1000px;
+  resize: horizontal;
+  overflow: auto;
+  margin-bottom: var(--section-margin);
+  padding-right: 8px;
+  padding-bottom: 8px;
+  border-style: dashed;
+  border-color: var(--border-default);
+  border-width: 0 1px 1px 0;
+}
+
+a.link-card {
+  color: var(--text-primary);
+  background: white;
+  transition: var(--animation);
+}
+
+a.link-card:hover {
+  color: var(--text-primary);
+  background: #f8f9fb;
+  transition: var(--animation);
+}
+
+.link-card {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 12px;
+  gap: 12px;
+  border-radius: 6px;
+  background: white;
+  border: 0.5px solid var(--border-default);
+}
+
+.link-card .icon-button-sm {
+  flex-shrink: 0;
+  display: none;
+}
+
+.link-card:hover .icon-button-sm {
+  display: inline-flex;
+}
+
+.card-top {
+  outline: var(--debug-outlines) dashed fuchsia;
+  display: flex;
+  gap: 6px;
+  justify-content: space-between;
+}
+
+.card-details {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0px; /* Ensures container fills the available space */
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.form-name {
+  font-family: Inter;
+  font-size: 15px;
+  line-height: 26px;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  color: var(--text-primary);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; /* Set a max width to allow truncation */
+  flex: 1; /* Ensures name fills the available space */
+  min-width: 0px;
+  overflow: hidden;
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.form-slug {
+  font-family: Monaspace;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 450;
+  color: #6b6f76;
+  letter-spacing: -0.025em;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; /* Set a max width to allow truncation */
+  flex-shrink: 1; /* Allow shrinking to enable ellipsis */
+  overflow: hidden;
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.card-bottom {
+  display: flex;
+  gap: 4px;
+  justify-content: space-between;
+  padding-top: 8px;
+  border-top: 0.75px solid var(--border-default);
+  outline: var(--debug-outlines) dashed blue;
+}
+
+.creator {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  min-width: 0px;
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.link-card .avatar {
+  height: 16px;
+  width: 16px;
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.link-card .avatar:after {
+  height: 16px;
+  width: 16px;
+  margin-left: calc(-1 * 16px);
+}
+
+.avatar:before {
+  display: none;
+}
+
+.created-by {
+  font-family: Inter;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 450;
+  color: #4f5359;
+  padding-left: 4px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%; /* Set a max width to allow truncation */
+  flex: 1;
+  min-width: 0px;
+  overflow: hidden; /* Allow shrinking to enable ellipsis */
+  outline: var(--debug-outlines) dashed fuchsia;
+}
+
+.created-on {
+  font-family: Inter;
+  font-size: 11px;
+  line-height: 16px;
+  font-weight: 450;
+  color: #4f5359;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-right: 4px;
+  flex-shrink: 0;
   outline: var(--debug-outlines) dashed fuchsia;
 }
 
