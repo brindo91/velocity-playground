@@ -514,12 +514,12 @@ h2 + p {
   display: inline-flex;
   background: var(--component-hover);
   border: 1px solid var(--border-default);
-  padding: 2px 4px 0px 4px;
-  border-radius: 4px;
+  padding: 2px 3px 0px 3px;
+  border-radius: 3px;
   font-family: "Monaspace";
-  font-weight: 450;
-  letter-spacing: 0.012em;
-  font-size: 12px;
+  font-weight: 600;
+  font-size: 11px;
+  line-height: 1.5;
 }
 
 .filter-list,
@@ -1308,6 +1308,11 @@ buttons {
   color: #90959d;
 }
 
+.vh-leading-content *,
+.vh-trailing-content * {
+  flex-shrink: 0;
+}
+
 .vh-trailing-content {
   display: flex;
   align-items: center;
@@ -1552,6 +1557,7 @@ textarea {
   line-height: 20px;
   resize: none;
   margin-bottom: 56px;
+  scroll-padding-block: 12px;
 }
 
 input[type="text"]:hover,
@@ -1676,3 +1682,47 @@ textarea:focus::placeholder {
   color: var(--text-primary);
 }
 /* #endregion */
+
+.taskbar {
+  display: flex;
+  gap: 1rem;
+}
+
+/* Individual icon styles */
+.icon-bounce {
+  width: 50px;
+  height: 50px;
+  background-color: #0078d4;
+  border-radius: 8px;
+  animation: bounce 0.5s ease forwards;
+  animation-iteration-count: infinite;
+  animation-delay: 3.5s;
+}
+
+/* Bounce animation */
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+}
+
+/* Staggering the animation delays */
+.icon-bounce:nth-child(1) {
+  animation-delay: 0s;
+}
+.icon-bounce:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.icon-bounce:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.icon-bounce:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.icon-bounce:nth-child(5) {
+  animation-delay: 0.4s;
+}
