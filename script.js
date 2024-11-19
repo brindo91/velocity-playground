@@ -2,22 +2,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const button = document.getElementById("debug-outlines");
 
   if (button) {
-    console.log("Button found. Setting up event listener.");
     button.addEventListener("click", () => {
       const root = document.documentElement;
       const currentValue = getComputedStyle(root)
         .getPropertyValue("--debug-outlines")
         .trim();
 
-      console.log("Current value of --debug-outlines:", currentValue);
-
       const newValue = currentValue === "0px" ? "1px" : "0px";
       root.style.setProperty("--debug-outlines", newValue);
-
-      console.log("New value of --debug-outlines set to:", newValue);
     });
-  } else {
-    console.error("Button with id 'debug-outlines' not found.");
   }
 });
 
@@ -52,7 +45,7 @@ input.addEventListener("input", function () {
   hiddenSpan.textContent = input.value || input.placeholder;
 
   // Get the width of the hidden span, constrained to min and max
-  const minWidth = 10; // Minimum width in pixels
+  const minWidth = 0; // Minimum width in pixels
   const maxWidth = 300; // Maximum width in pixels
   const contentWidth = hiddenSpan.offsetWidth;
 
